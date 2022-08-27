@@ -18,10 +18,14 @@ let H = input[0];
 
 let M = input[1];
 
-if((0<=H && H<=24) && (0<=M && M<=60)){
-    if(H == 0 && M <= 45) {
+if((0<=H && H<=23) && (0<=M && M<=59)){
+    if(H == 0 && M < 45) {
         H = 24;
     }
+
+    if (H == 0 && M == 45) {
+        H = 0;
+    } 
     
-    console.log(Math.floor(((60 * H) + (M - 45)) / 60) + ' ' + Math.floor(((60 * H) + (M - 45)) % 60));
+    console.log(Math.floor(((60 * H) + (M - 45)) / 60), Math.floor(((60 * H) + (M - 45)) % 60));
 }
