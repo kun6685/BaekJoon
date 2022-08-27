@@ -14,14 +14,14 @@ for(let i = 0; i<input.length; ++i){
     newArr.push(+input[i]);
 }
 
-const H = input[0];
+let H = input[0];
 
-const M = input[1];
+let M = input[1];
 
 if((0<=H && H<=24) && (0<=M && M<=60)){
+    if(H == 0 && M <= 45) {
+        H = 24;
+    }
     
-    console.log(Math.round(((60 * H) + (M - 45)) / 60));
-    
-    console.log(Math.round(((60 * H) + (M - 45)) % 60));
-    
+    console.log(Math.floor(((60 * H) + (M - 45)) / 60) + ' ' + Math.floor(((60 * H) + (M - 45)) % 60));
 }
