@@ -28,8 +28,9 @@ let B = newArr[1];
 
 let C = newArr[2];
 
+console.log(A, B, C);
 switch(true){
-    case A === B === C:
+    case A === B && B === C:
     console.log(10000 + (A * 1000));
     break;
 
@@ -45,15 +46,15 @@ switch(true){
     console.log(1000 + (A * 100));
     break;
 
-    case A > B && B > C || A > B && C > B:
+    case A > B && B > C || A > C && C > B:
     console.log(A * 100);
     break;
     
-    case B > A && A > C || B > A && C > A:
+    case B > A && A > C || B > C && C > A:
     console.log(B * 100);
     break;
     
-    case C > B && B > A || C > B && A > B:
+    case C > B && B > A || C > A && A > B:
     console.log(C * 100);
     break;
 }
